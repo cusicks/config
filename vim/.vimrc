@@ -107,9 +107,11 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
 nnoremap <leader>a :Ack
 nmap <leader>A :Ack <C-R><C-W><CR>
-colorscheme tim
+colorscheme solarized
 syntax on
 filetype plugin indent on
 set linebreak
@@ -148,7 +150,7 @@ nmap <F10> :vertical resize +10<CR>
 nmap <C-f> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=0
 let NERDTreeChDirMode=2
-let g:NERDTreeWinSize = 70
+let g:NERDTreeWinSize = 30
 
 " Filetype autocommands
 " ------------------------------------------------------------------------------
