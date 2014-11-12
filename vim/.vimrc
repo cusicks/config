@@ -4,25 +4,27 @@ set nocompatible
 " ------------------------------------------------------------------------------
 
 filetype off        " required by vundle - reenabled below
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'elzr/vim-json'
-Bundle 'scrooloose/syntastic'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'elzr/vim-json'
+Plugin 'scrooloose/syntastic'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'groenewege/vim-less'
 
 " Tabs & Spaces
 " -------------------------------------------------------------------------------
@@ -111,13 +113,19 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 nnoremap <leader>a :Ack
 nmap <leader>A :Ack <C-R><C-W><CR>
-colorscheme solarized
 syntax on
 filetype plugin indent on
 set linebreak
 set guifont=Inconsolata\ 9
 set nocursorline
 
+" Colors
+" ------------------------------------------------------------------------------
+set background=dark
+set t_Co=16
+colorscheme solarized
+" set g:solarized_termcolors=16
+"
 " Status Line
 " ------------------------------------------------------------------------------
 
@@ -139,6 +147,8 @@ set nocursorline
 
 " Clipboard
 vmap <C-c> "+yi
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 " Window Resizing
 nmap <F9> :vertical resize -10<CR>
@@ -147,7 +157,7 @@ nmap <F10> :vertical resize +10<CR>
 " NERDTree
 " ------------------------------------------------------------------------------
 
-nmap <C-f> :NERDTreeToggle<CR>
+nmap <C-i> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=0
 let NERDTreeChDirMode=2
 let g:NERDTreeWinSize = 30
@@ -165,7 +175,7 @@ autocmd FileType python,css,javascript
   \ setlocal softtabstop=4 |
   \ setlocal shiftwidth=4
 
-autocmd FileType makefile,Makefile,java,c,xml,html
+autocmd FileType makefile,Makefile,java,c,xml,html,asm
   \ setlocal noexpandtab |
   \ setlocal tabstop=4 |
   \ setlocal softtabstop=4 |
@@ -183,4 +193,5 @@ map <C-l> <C-w>l
 " ------------------------------------------------------------------------------
 
 runtime! ftplugin/man.vim
-
+set t_ut=
+set t_md=
