@@ -189,6 +189,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+
+hi CSVColumnOdd ctermbg=19
+hi CSVColumnEven ctermbg=22
+
 " Man Pages
 " ------------------------------------------------------------------------------
 
